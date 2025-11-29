@@ -17,6 +17,7 @@ import dev.minlauncher.MinLauncherApp
 import dev.minlauncher.R
 import dev.minlauncher.databinding.ActivityMainBinding
 import dev.minlauncher.util.isEinkDisplay
+import dev.minlauncher.util.resetDefaultLauncher
 import dev.minlauncher.util.toNightMode
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
@@ -146,7 +147,7 @@ class MainActivity : AppCompatActivity() {
         when (requestCode) {
             REQUEST_CODE_LAUNCHER_SELECTOR -> {
                 if (resultCode == RESULT_OK) {
-                    dev.minlauncher.util.resetDefaultLauncher()
+                    resetDefaultLauncher()
                 }
             }
             REQUEST_CODE_DEVICE_ADMIN -> {

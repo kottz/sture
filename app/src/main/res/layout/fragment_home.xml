@@ -88,7 +88,7 @@
         android:layout_marginHorizontal="20dp"
         android:layout_marginBottom="56dp"
         android:text="@string/set_as_default_launcher"
-        android:textDecoration="underline"
+        android:textStyle="bold"
         android:visibility="gone" />
 
 </FrameLayout>

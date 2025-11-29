@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data-extraction-rules>
+    <cloud-backup>
+        <!-- Exclude device-specific storage so launcher data stays local -->
+        <exclude domain="device_storage" />
+    </cloud-backup>
+    <device-transfer>
+        <exclude domain="device_storage" />
+    </device-transfer>
+</data-extraction-rules>

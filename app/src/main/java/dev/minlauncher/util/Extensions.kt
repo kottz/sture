@@ -107,10 +107,10 @@ fun Context.launchApp(packageName: String, activityName: String?, userHandle: Us
         try {
             launcher.startMainActivity(component, android.os.Process.myUserHandle(), null, null)
         } catch (e: Exception) {
-            showToast(R.string.unable_to_launch_app)
+            showToast(R.string.error_launching_app)
         }
     } catch (e: Exception) {
-        showToast(R.string.unable_to_launch_app)
+        showToast(R.string.error_launching_app)
     }
 }
 
@@ -119,7 +119,7 @@ fun Context.openAppInfo(packageName: String, userHandle: UserHandle) {
     val intent = packageManager.getLaunchIntentForPackage(packageName)
     intent?.component?.let { component ->
         launcher.startAppDetailsActivity(component, userHandle, null, null)
-    } ?: showToast(R.string.unable_to_launch_app)
+    } ?: showToast(R.string.error_launching_app)
 }
 
 fun Context.uninstallApp(packageName: String) {
@@ -152,9 +152,12 @@ fun Context.openCalendarApp() {
         val uri = CalendarContract.CONTENT_URI.buildUpon().appendPath("time").build()
         startActivity(Intent(Intent.ACTION_VIEW, uri))
     } catch (e: Exception) {
-        try {
-            startActivity(Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_APP_CALENDAR))
-        } catch (e: Exception) {
+        val intent = Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_APP_CALENDAR)
+        val resolved = packageManager.resolveActivity(intent, 0)
+        if (resolved?.activityInfo != null) {
+            val component = ComponentName(resolved.activityInfo.packageName, resolved.activityInfo.name)
+            startActivity(Intent(intent).setComponent(component))
+        } else {
             showToast(R.string.app_not_found)
         }
     }
@@ -216,7 +219,10 @@ fun Context.resetDefaultLauncher() {
             PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
             PackageManager.DONT_KILL_APP
         )
-        startActivity(Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_HOME))
+        val homeIntent = Intent(Intent.ACTION_MAIN)
+            .addCategory(Intent.CATEGORY_HOME)
+            .setComponent(componentName)
+        startActivity(homeIntent)
         packageManager.setComponentEnabledSetting(
             componentName,
             PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
