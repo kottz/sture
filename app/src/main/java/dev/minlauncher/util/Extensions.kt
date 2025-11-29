@@ -1,9 +1,7 @@
 package dev.minlauncher.util
 
 import android.annotation.SuppressLint
-import android.app.Activity
 import android.app.SearchManager
-import android.app.role.RoleManager
 import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
@@ -231,18 +229,6 @@ fun Context.resetDefaultLauncher() {
     } catch (e: Exception) {
         e.printStackTrace()
     }
-}
-
-fun Activity.showLauncherSelector(requestCode: Int) {
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-        val roleManager = getSystemService(Context.ROLE_SERVICE) as RoleManager
-        if (roleManager.isRoleAvailable(RoleManager.ROLE_HOME)) {
-            @Suppress("DEPRECATION")
-            startActivityForResult(roleManager.createRequestRoleIntent(RoleManager.ROLE_HOME), requestCode)
-            return
-        }
-    }
-    resetDefaultLauncher()
 }
 
 fun Context.openDefaultAppsSettings() {

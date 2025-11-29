@@ -1,5 +1,6 @@
 package dev.minlauncher.ui
 
+import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
 import android.os.Build
@@ -7,8 +8,10 @@ import android.os.Bundle
 import android.view.View
 import android.view.WindowManager
 import androidx.activity.OnBackPressedCallback
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.view.WindowCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
@@ -28,10 +31,12 @@ class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
     lateinit var viewModel: MainViewModel
         private set
-    
-    companion object {
-        const val REQUEST_CODE_LAUNCHER_SELECTOR = 100
-        const val REQUEST_CODE_DEVICE_ADMIN = 101
+    private val launcherSelector = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        if (result.resultCode == RESULT_OK) {
+            resetDefaultLauncher()
+        }
     }
     
     override fun attachBaseContext(newBase: android.content.Context) {
@@ -79,16 +84,15 @@ class MainActivity : AppCompatActivity() {
     private fun setupWindow() {
         // Transparent system bars, edge to edge
         window.addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
-        
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            window.setDecorFitsSystemWindows(false)
-        } else {
+        WindowCompat.setDecorFitsSystemWindows(window, false)
+
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) {
             @Suppress("DEPRECATION")
             window.decorView.systemUiVisibility = (
                 View.SYSTEM_UI_FLAG_LAYOUT_STABLE or
-                View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or
-                View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-            )
+                    View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or
+                    View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                )
         }
     }
     
@@ -140,21 +144,15 @@ class MainActivity : AppCompatActivity() {
             AppCompatDelegate.setDefaultNightMode(settings.theme.toNightMode())
         }
     }
-    
-    @Deprecated("Deprecated in Java")
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        when (requestCode) {
-            REQUEST_CODE_LAUNCHER_SELECTOR -> {
-                if (resultCode == RESULT_OK) {
-                    resetDefaultLauncher()
-                }
-            }
-            REQUEST_CODE_DEVICE_ADMIN -> {
-                if (resultCode == RESULT_OK) {
-                    viewModel.updateDoubleTapToLock(true)
-                }
+
+    fun showLauncherSelector() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            val roleManager = getSystemService(Context.ROLE_SERVICE) as android.app.role.RoleManager
+            if (roleManager.isRoleAvailable(android.app.role.RoleManager.ROLE_HOME)) {
+                launcherSelector.launch(roleManager.createRequestRoleIntent(android.app.role.RoleManager.ROLE_HOME))
+                return
             }
         }
+        resetDefaultLauncher()
     }
 }

@@ -1,5 +1,6 @@
 package dev.minlauncher.ui.settings
 
+import android.app.Activity
 import android.app.admin.DevicePolicyManager
 import android.content.ComponentName
 import android.content.Context
@@ -16,6 +17,7 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
@@ -36,6 +38,13 @@ class SettingsFragment : Fragment() {
     private val binding get() = _binding!!
     
     private val viewModel by lazy { (requireActivity() as MainActivity).viewModel }
+    private val deviceAdminLauncher = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        if (result.resultCode == Activity.RESULT_OK) {
+            viewModel.updateDoubleTapToLock(true)
+        }
+    }
     
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -70,9 +79,7 @@ class SettingsFragment : Fragment() {
         }
         
         binding.setLauncherButton.setOnClickListener {
-            (requireActivity() as MainActivity).showLauncherSelector(
-                MainActivity.REQUEST_CODE_LAUNCHER_SELECTOR
-            )
+            (requireActivity() as MainActivity).showLauncherSelector()
         }
         
         // Home screen
@@ -386,10 +393,7 @@ class SettingsFragment : Fragment() {
                     putExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN, componentName)
                     putExtra(DevicePolicyManager.EXTRA_ADD_EXPLANATION, getString(R.string.device_admin_explanation))
                 }
-                (requireActivity() as MainActivity).startActivityForResult(
-                    intent,
-                    MainActivity.REQUEST_CODE_DEVICE_ADMIN
-                )
+                deviceAdminLauncher.launch(intent)
             }
         }
     }

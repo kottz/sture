@@ -132,9 +132,7 @@ class HomeFragment : Fragment() {
         }
         
         binding.setDefaultLauncher.setOnClickListener {
-            (requireActivity() as MainActivity).showLauncherSelector(
-                MainActivity.REQUEST_CODE_LAUNCHER_SELECTOR
-            )
+            (requireActivity() as MainActivity).showLauncherSelector()
         }
         binding.setDefaultLauncher.setOnLongClickListener {
             binding.setDefaultLauncher.isVisible = false

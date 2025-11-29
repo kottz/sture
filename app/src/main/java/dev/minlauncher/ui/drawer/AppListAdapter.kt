@@ -162,7 +162,7 @@ class AppListAdapter(
             renameEditText.hideKeyboard()
             onRenameClick(app, newName)
             renamePosition = RecyclerView.NO_POSITION
-            val position = adapterPosition.takeIf { it != RecyclerView.NO_POSITION } ?: return
+            val position = bindingAdapterPosition.takeIf { it != RecyclerView.NO_POSITION } ?: return
             notifyItemChanged(position)
         }
         
