@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true">
+
+    <!-- Main app label -->
+    <TextView
+        android:id="@+id/appLabel"
+        style="@style/TextLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="12dp"
+        tools:text="App Name" />
+
+    <!-- New app indicator -->
+    <View
+        android:id="@+id/newIndicator"
+        android:layout_width="6dp"
+        android:layout_height="6dp"
+        android:layout_gravity="start|center_vertical"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/circle_indicator"
+        android:visibility="gone" />
+
+    <!-- Work profile indicator -->
+    <View
+        android:id="@+id/workIndicator"
+        android:layout_width="4dp"
+        android:layout_height="4dp"
+        android:layout_gravity="start|center_vertical"
+        android:layout_marginStart="6dp"
+        android:background="@drawable/circle_indicator"
+        android:visibility="gone" />
+
+    <!-- Options row -->
+    <LinearLayout
+        android:id="@+id/optionsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/drawerBackground"
+        android:gravity="end"
+        android:orientation="horizontal"
+        android:paddingVertical="8dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/deleteButton"
+            style="@style/OptionButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/ic_delete"
+            android:text="@string/delete" />
+
+        <TextView
+            android:id="@+id/renameButton"
+            style="@style/OptionButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/ic_rename"
+            android:text="@string/rename" />
+
+        <TextView
+            android:id="@+id/hideButton"
+            style="@style/OptionButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/ic_hide"
+            android:text="@string/hide" />
+
+        <TextView
+            android:id="@+id/infoButton"
+            style="@style/OptionButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/ic_info"
+            android:text="@string/info" />
+
+        <TextView
+            android:id="@+id/closeButton"
+            style="@style/OptionButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/ic_close"
+            android:text="@string/close" />
+
+    </LinearLayout>
+
+    <!-- Rename row -->
+    <LinearLayout
+        android:id="@+id/renameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
+        android:visibility="gone">
+
+        <EditText
+            android:id="@+id/renameEditText"
+            style="@style/TextLarge"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:imeOptions="actionDone"
+            android:inputType="textCapWords"
+            android:maxLength="30"
+            android:maxLines="1"
+            android:paddingVertical="12dp" />
+
+        <TextView
+            android:id="@+id/saveRenameButton"
+            style="@style/OptionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/ic_check"
+            android:padding="8dp"
+            android:text="@string/save" />
+
+        <TextView
+            android:id="@+id/cancelRenameButton"
+            style="@style/OptionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/ic_close"
+            android:padding="8dp"
+            android:text="@string/cancel" />
+
+    </LinearLayout>
+
+</FrameLayout>

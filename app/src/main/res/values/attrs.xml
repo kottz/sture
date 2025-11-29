@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="primaryColor" format="color" />
+    <attr name="primaryColorTransparent" format="color" />
+    <attr name="backgroundColor" format="color" />
+    <attr name="drawerBackground" format="color" />
+    <attr name="cardBackground" format="color" />
+</resources>

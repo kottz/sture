@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Min Launcher</string>
+
+    <!-- Home screen -->
+    <string name="long_press_to_select">Långtryck för att välja app</string>
+    <string name="first_run_tips">Svep upp för appar\nLångtryck för inställningar</string>
+    <string name="set_as_default_launcher">Ställ in som standardstartare</string>
+    <string name="change_default_launcher">Ändra standardstartare</string>
+    <string name="app_not_found">Appen hittades inte</string>
+    <string name="enable_double_tap_lock">Aktivera dubbeltryck för lås i inställningar</string>
+
+    <!-- App drawer -->
+    <string name="search_apps">Sök appar…</string>
+    <string name="select_app">Välj app</string>
+    <string name="select_swipe_left_app">Välj app för svep vänster</string>
+    <string name="select_swipe_right_app">Välj app för svep höger</string>
+    <string name="select_clock_app">Välj klockapp</string>
+    <string name="select_calendar_app">Välj kalenderapp</string>
+    <string name="hidden_apps">Dolda appar</string>
+    <string name="enter_name_first">Ange ett namn först</string>
+    <string name="cannot_delete_system_app">Kan inte radera systemapp</string>
+
+    <!-- App options -->
+    <string name="hide">Dölj</string>
+    <string name="show">Visa</string>
+    <string name="delete">Radera</string>
+    <string name="rename">Byt namn</string>
+    <string name="info">Info</string>
+    <string name="close">Stäng</string>
+    <string name="save">Spara</string>
+    <string name="cancel">Avbryt</string>
+
+    <!-- Settings -->
+    <string name="home_screen">Hemskärm</string>
+    <string name="appearance">Utseende</string>
+    <string name="gestures">Gester</string>
+
+    <string name="home_apps_count">Hemappar</string>
+    <string name="alignment">Justering</string>
+    <string name="date_time">Datum &amp; tid</string>
+    <string name="screen_time">Skärmtid</string>
+    <string name="status_bar">Statusfält</string>
+
+    <string name="theme">Tema</string>
+    <string name="text_size">Textstorlek</string>
+    <string name="keyboard">Visa tangentbord automatiskt</string>
+
+    <string name="swipe_left">Svep vänster</string>
+    <string name="swipe_right">Svep höger</string>
+    <string name="swipe_down">Svep ner</string>
+    <string name="double_tap_lock">Dubbeltryck för lås</string>
+
+    <!-- Values -->
+    <string name="on">På</string>
+    <string name="off">Av</string>
+    <string name="date_only">Endast datum</string>
+    <string name="left">Vänster</string>
+    <string name="center">Centrerad</string>
+    <string name="right">Höger</string>
+    <string name="bottom_on">Nederkant: På</string>
+    <string name="bottom_off">Nederkant: Av</string>
+    <string name="light">Ljust</string>
+    <string name="dark">Mörkt</string>
+    <string name="system">System</string>
+    <string name="notifications">Aviseringar</string>
+    <string name="search">Sök</string>
+    <string name="camera">Kamera</string>
+    <string name="phone">Telefon</string>
+
+    <!-- Footer -->
+    <string name="github">GitHub</string>
+    <string name="privacy">Integritet</string>
+
+    <!-- Device admin -->
+    <string name="device_admin_label">Skärmlås</string>
+    <string name="device_admin_description">Aktivera skärmlås via dubbeltryck på hemskärmen</string>
+    <string name="device_admin_explanation">Tillåt Min Launcher att låsa skärmen när du dubbeltrycker på hemskärmen.</string>
+
+    <!-- Accessibility service -->
+    <string name="accessibility_service_label">Skärmlås</string>
+    <string name="accessibility_service_description">Aktiverar dubbeltryck för att låsa skärmen på hem</string>
+
+    <!-- Errors -->
+    <string name="error_launching_app">Kunde inte starta appen</string>
+</resources>

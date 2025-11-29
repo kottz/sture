@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/drawerBackground"
+    tools:context=".ui.drawer.AppDrawerFragment">
+
+    <!-- Search bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="88dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/searchEditText"
+            style="@style/TextLarge"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="@string/search_apps"
+            android:imeOptions="actionGo"
+            android:importantForAutofill="no"
+            android:inputType="textCapSentences|textNoSuggestions"
+            android:maxLength="200"
+            android:maxLines="1"
+            android:paddingHorizontal="4dp"
+            android:paddingVertical="8dp"
+            android:textColorHint="?attr/primaryColorTransparent" />
+
+        <TextView
+            android:id="@+id/renameButton"
+            style="@style/TextSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:padding="8dp"
+            android:text="@string/rename"
+            android:textAllCaps="true"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <!-- App list -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="160dp"
+        android:clipToPadding="false"
+        android:fadingEdgeLength="24dp"
+        android:paddingBottom="100dp"
+        android:requiresFadingEdge="vertical" />
+
+</FrameLayout>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Light theme colors -->
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+    <color name="gray_light">#FFF5F5F5</color>
+    <color name="gray_dark">#FF121212</color>
+
+    <!-- Primary colors -->
+    <color name="primary_light">#FF000000</color>
+    <color name="primary_dark">#FFFFFFFF</color>
+
+    <!-- Transparent variants -->
+    <color name="primary_light_transparent">#66000000</color>
+    <color name="primary_dark_transparent">#66FFFFFF</color>
+
+    <!-- Background colors -->
+    <color name="background_light">#FFFFFFFF</color>
+    <color name="background_dark">#FF000000</color>
+
+    <!-- Drawer background -->
+    <color name="drawer_background_light">#F2FFFFFF</color>
+    <color name="drawer_background_dark">#F2000000</color>
+
+    <!-- Card backgrounds -->
+    <color name="card_background_light">#0A000000</color>
+    <color name="card_background_dark">#0AFFFFFF</color>
+
+    <!-- Indicator color -->
+    <color name="indicator">#FF4CAF50</color>
+</resources>

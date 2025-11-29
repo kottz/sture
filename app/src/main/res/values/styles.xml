@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Text styles -->
+    <style name="TextClock">
+        <item name="android:textSize">48sp</item>
+        <item name="android:textColor">?attr/primaryColor</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:letterSpacing">-0.02</item>
+    </style>
+
+    <style name="TextDate">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">?attr/primaryColor</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:letterSpacing">0.05</item>
+    </style>
+
+    <style name="TextLarge">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">?attr/primaryColor</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:letterSpacing">-0.01</item>
+    </style>
+
+    <style name="TextMedium">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">?attr/primaryColor</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="TextSmall">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">?attr/primaryColor</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="TextSmallBold" parent="TextSmall">
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <!-- Option button style for app drawer -->
+    <style name="OptionButton">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">?attr/primaryColor</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:gravity">center</item>
+        <item name="android:drawablePadding">4dp</item>
+        <item name="android:drawableTint">?attr/primaryColor</item>
+        <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
+        <item name="android:padding">8dp</item>
+    </style>
+
+    <!-- Picker button style -->
+    <style name="PickerButton">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">?attr/primaryColor</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:minWidth">48dp</item>
+    </style>
+
+</resources>

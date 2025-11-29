@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.HomeFragment">
+
+    <!-- Invisible trigger for accessibility service lock -->
+    <FrameLayout
+        android:id="@+id/lockTrigger"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:clickable="true"
+        android:focusable="true" />
+
+    <!-- Date and time -->
+    <LinearLayout
+        android:id="@+id/dateTimeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="56dp"
+        android:orientation="vertical">
+
+        <TextClock
+            android:id="@+id/clock"
+            style="@style/TextClock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:format12Hour="h:mm"
+            android:format24Hour="HH:mm" />
+
+        <TextView
+            android:id="@+id/date"
+            style="@style/TextDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="3dp"
+            tools:text="Mon, 15 Jan" />
+
+    </LinearLayout>
+
+    <!-- Screen time -->
+    <TextView
+        android:id="@+id/screenTime"
+        style="@style/TextSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="72dp"
+        android:padding="8dp"
+        android:visibility="gone"
+        tools:text="2h 30m"
+        tools:visibility="visible" />
+
+    <!-- Home apps container -->
+    <LinearLayout
+        android:id="@+id/homeAppsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="112dp"
+        android:paddingBottom="48dp" />
+
+    <!-- First run tips -->
+    <TextView
+        android:id="@+id/firstRunTips"
+        style="@style/TextSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="56dp"
+        android:text="@string/first_run_tips"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <!-- Set default launcher prompt -->
+    <TextView
+        android:id="@+id/setDefaultLauncher"
+        style="@style/TextMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="56dp"
+        android:text="@string/set_as_default_launcher"
+        android:textDecoration="underline"
+        android:visibility="gone" />
+
+</FrameLayout>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Min Launcher</string>
+
+    <!-- Home screen -->
+    <string name="long_press_to_select">Long press to select app</string>
+    <string name="first_run_tips">Swipe up for apps\nLong press for settings</string>
+    <string name="set_as_default_launcher">Set as default launcher</string>
+    <string name="change_default_launcher">Change default launcher</string>
+    <string name="app_not_found">App not found</string>
+    <string name="enable_double_tap_lock">Enable double tap lock in settings</string>
+
+    <!-- App drawer -->
+    <string name="search_apps">Search apps…</string>
+    <string name="select_app">Select app</string>
+    <string name="select_swipe_left_app">Select swipe left app</string>
+    <string name="select_swipe_right_app">Select swipe right app</string>
+    <string name="select_clock_app">Select clock app</string>
+    <string name="select_calendar_app">Select calendar app</string>
+    <string name="hidden_apps">Hidden apps</string>
+    <string name="enter_name_first">Enter a name first</string>
+    <string name="cannot_delete_system_app">Cannot delete system app</string>
+
+    <!-- App options -->
+    <string name="hide">Hide</string>
+    <string name="show">Show</string>
+    <string name="delete">Delete</string>
+    <string name="rename">Rename</string>
+    <string name="info">Info</string>
+    <string name="close">Close</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+
+    <!-- Settings -->
+    <string name="home_screen">Home Screen</string>
+    <string name="appearance">Appearance</string>
+    <string name="gestures">Gestures</string>
+
+    <string name="home_apps_count">Home apps</string>
+    <string name="alignment">Alignment</string>
+    <string name="date_time">Date &amp; time</string>
+    <string name="screen_time">Screen time</string>
+    <string name="status_bar">Status bar</string>
+
+    <string name="theme">Theme</string>
+    <string name="text_size">Text size</string>
+    <string name="keyboard">Auto-show keyboard</string>
+
+    <string name="swipe_left">Swipe left</string>
+    <string name="swipe_right">Swipe right</string>
+    <string name="swipe_down">Swipe down</string>
+    <string name="double_tap_lock">Double tap lock</string>
+
+    <!-- Values -->
+    <string name="on">On</string>
+    <string name="off">Off</string>
+    <string name="date_only">Date only</string>
+    <string name="left">Left</string>
+    <string name="center">Center</string>
+    <string name="right">Right</string>
+    <string name="bottom_on">Bottom: On</string>
+    <string name="bottom_off">Bottom: Off</string>
+    <string name="light">Light</string>
+    <string name="dark">Dark</string>
+    <string name="system">System</string>
+    <string name="notifications">Notifications</string>
+    <string name="search">Search</string>
+    <string name="camera">Camera</string>
+    <string name="phone">Phone</string>
+
+    <!-- Footer -->
+    <string name="github">GitHub</string>
+    <string name="privacy">Privacy</string>
+
+    <!-- Device admin -->
+    <string name="device_admin_label">Screen Lock</string>
+    <string name="device_admin_description">Enable screen lock via double tap on home screen</string>
+    <string name="device_admin_explanation">Allow Min Launcher to lock the screen when you double tap on the home screen.</string>
+
+    <!-- Accessibility service -->
+    <string name="accessibility_service_label">Screen Lock</string>
+    <string name="accessibility_service_description">Enables double tap to lock screen on home</string>
+
+    <!-- Errors -->
+    <string name="error_launching_app">Could not launch app</string>
+</resources>
