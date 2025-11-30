@@ -10,6 +10,11 @@
         <item name="android:windowLightNavigationBar">true</item>
         <item name="android:windowTranslucentStatus">false</item>
         <item name="android:windowTranslucentNavigation">false</item>
+        <item name="primaryColor">@color/primary_light</item>
+        <item name="primaryColorTransparent">@color/primary_light_transparent</item>
+        <item name="backgroundColor">@color/background_light</item>
+        <item name="drawerBackground">@color/drawer_background_light</item>
+        <item name="cardBackground">@color/card_background_light</item>
     </style>
 
     <!-- Light theme -->
